@@ -1,0 +1,176 @@
+```html
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HugeliOS</title>
+
+    <style>
+
+        body{
+            margin:0;
+            background-color: rgb(45, 45, 90);
+            font-family: Arial;
+            overflow:hidden;
+        }
+
+        h1{
+            color:white;
+        }
+
+        p{
+            color:white;
+        }
+
+        .window{
+            width:500px;
+            height:350px;
+            background:white;
+            position:absolute;
+            top:100px;
+            left:100px;
+            border:3px solid black;
+        }
+
+        .topbar{
+            background:purple;
+            color:white;
+            padding:10px;
+            cursor:move;
+            font-weight:bold;
+        }
+
+        .inside{
+            padding:10px;
+        }
+
+        button{
+            background:purple;
+            color:white;
+            border:none;
+            padding:8px;
+            cursor:pointer;
+        }
+
+        input{
+            padding:8px;
+            width:250px;
+        }
+
+        #taskbar{
+            position:fixed;
+            bottom:0;
+            width:100%;
+            background:black;
+            color:white;
+            padding:10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="window" id="mywindow">
+
+        <div class="topbar" id="topbar">
+            Hugeli Browser
+        </div>
+
+        <div class="inside">
+
+            <h1 style="color:black;">Welcome to HugeliOS</h1>
+
+            <p style="color:black;">
+                This is my first real HTML project :)
+            </p>
+
+            <img src="9f2dce383ee3ea95b80a61d5b1a485d6.webp" width="200">
+
+            <br><br>
+
+            <input type="text" id="search" placeholder="Search Google">
+
+            <button onclick="searchStuff()">
+                Search
+            </button>
+
+            <br><br>
+
+            <a href="https://youtube.com" target="_blank">
+                Open YouTube
+            </a>
+
+            <br><br>
+
+            <a href="https://serena.fi" target="_blank">
+                Open Serena
+            </a>
+
+        </div>
+
+    </div>
+
+    <div id="taskbar">
+        HugeliOS 0.1
+    </div>
+
+<script>
+
+function searchStuff(){
+
+    let text =
+    document.getElementById("search").value;
+
+    window.open(
+        "https://google.com/search?q=" + text
+    );
+}
+
+/* moving the window */
+
+let box =
+document.getElementById("mywindow");
+
+let bar =
+document.getElementById("topbar");
+
+let isDown = false;
+
+let offsetX;
+let offsetY;
+
+bar.addEventListener("mousedown", function(e){
+
+    isDown = true;
+
+    offsetX = e.clientX - box.offsetLeft;
+    offsetY = e.clientY - box.offsetTop;
+
+});
+
+document.addEventListener("mouseup", function(){
+
+    isDown = false;
+
+});
+
+document.addEventListener("mousemove", function(e){
+
+    if(isDown){
+
+        box.style.left =
+        (e.clientX - offsetX) + "px";
+
+        box.style.top =
+        (e.clientY - offsetY) + "px";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
