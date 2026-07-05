@@ -1,1 +1,1 @@
-This is an small web OS that has an google search, two links ( one for YT and one for an Finnish waterpark) you can move the windows and the OS greets the user,has purple text and an picture of an duck. AI was used to debug the os.
+This is an small web OS that has an google search bar so you can browse the web, two links ( one for YT and one for an Finnish waterpark) you can move the windows and the OS greets the user, the OS has purple text and an picture of an duck. AI was used to debug the os. The OS has an purple background that acts like an wallpaper.
